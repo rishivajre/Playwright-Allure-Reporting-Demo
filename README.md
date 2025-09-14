@@ -1,12 +1,10 @@
-# 🎭 Allure Playwright Demo
+🎭 Allure Playwright Demo
 
-This repository demonstrates how to integrate [Allure Report](https://allurereport.org/docs/playwright/) with [Playwright](https://playwright.dev/) for generating rich, interactive HTML test reports.
+This repository demonstrates how to integrate Allure Report
+ with Playwright
+ for generating rich, interactive HTML test reports.
 
----
-
-## 📁 Project Structure
-
-```
+📁 Project Structure
 Playwright-Allure-Demo/
 ├── tests/                  # Playwright test specs
 ├── allure-results/         # Allure raw results (auto-generated)
@@ -14,56 +12,42 @@ Playwright-Allure-Demo/
 ├── package.json            # Project dependencies and scripts
 ├── README.md               # Project documentation
 └── ...
-```
-<img width="1265" height="863" alt="image" src="https://github.com/user-attachments/assets/0cb141dc-7b26-4e7f-9249-20e0b57c4d5a" />
 
----
+🚀 Features
 
-## 🚀 Features
+Seamless integration of Allure with Playwright
 
-- Seamless integration of Allure with Playwright
-- Beautiful and customizable HTML reports
-- Metadata annotations (owner, severity, tags, etc.)
-- Step-by-step breakdown of test execution
-- Screenshots and attachments support
-- Environment info and test plan filtering
+Beautiful and customizable HTML reports
 
----
+Metadata annotations (owner, severity, tags, etc.)
 
-## 📦 Prerequisites
+Step-by-step breakdown of test execution
 
-- Node.js ≥ 18
-- Java (required by Allure CLI)
-- Playwright installed in your project
+Screenshots, videos, and trace attachments
 
----
+Environment info and test plan filtering
 
-## 🛠️ Setup Instructions
+📦 Prerequisites
 
-### 1. Install Dependencies
+Node.js ≥ 18
 
-```bash
+Java (required by Allure CLI)
+
+Playwright installed in your project
+
+🛠️ Setup Instructions
+1. Install Dependencies
+
+Install Playwright and Allure reporter:
+
 npm install --save-dev @playwright/test allure-playwright
-```
+npx playwright install --with-deps
 
-### 2. Configure Reporter
+2. Configure Allure Reporter
 
-Update your `playwright.config.ts`:
+Update your playwright.config.ts:
 
-```typescript
 import { defineConfig } from '@playwright/test';
-
-export default defineConfig({
-  reporter: [
-    ['line'],
-    ['allure-playwright']
-  ],
-});
-```
-
-You can also pass custom options like `environmentInfo` for OS and Node version details:
-
-```typescript
 import * as os from 'node:os';
 
 export default defineConfig({
@@ -77,32 +61,22 @@ export default defineConfig({
       },
     }],
   ],
+  use: {
+    trace: 'on',       // captures trace for debugging
+    screenshot: 'on',  // captures screenshots on failure
+    video: 'on',       // captures video of test execution
+  },
 });
-```
 
-### 3. Run Tests
 
-```bash
-npx playwright test
-```
+This enables Allure reporting with full debugging support.
 
-Test results will be saved to the `allure-results` directory.
+▶️ Running Tests & Generating Report
+3. Write a Test
 
-### 4. Generate Allure Report
+Add a file in tests/ (e.g., tests/login.spec.ts).
+Use Allure’s Runtime API for richer reporting. Example:
 
-```bash
-allure serve allure-results
-```
-
-This will launch a browser window with the generated report.
-
----
-
-## 🧪 Writing Enhanced Tests
-
-Use Allure's Runtime API to enrich your test reports:
-
-```typescript
 import { test } from '@playwright/test';
 import * as allure from 'allure-js-commons';
 
@@ -114,49 +88,61 @@ test('Login Test', async () => {
     // test logic
   });
 });
-```
 
----
+4. Run the Tests
+npx playwright test
 
-## 📎 Attachments
 
-Add screenshots or logs:
+Raw results will be generated in the allure-results/ folder.
 
-```typescript
+5. Install Allure CLI
+npm install -g allure-commandline --save-dev
+
+6. Generate & View Report
+allure serve allure-results
+
+
+This command will generate the report and automatically open it in a browser.
+
+📎 Attachments
+
+Attach files (e.g., screenshots, logs) to your reports:
+
 await allure.attachment('Screenshot', '/path/to/image.png', {
   contentType: 'image/png',
   fileExtension: 'png',
 });
-```
 
----
+📂 Test Plan Filtering
 
-## 📂 Test Plan Filtering
+Run only selected tests using a testplan.json file:
 
-Run only selected tests using a test plan file:
-
-```bash
 export ALLURE_TESTPLAN_PATH=testplan.json
 npx playwright test
-```
 
----
+🧭 Environment Info
 
-## 🧭 Environment Info
+System details can be automatically included in reports via environmentInfo in your config.
 
-Include system details in your config as shown above.
+📸 Sample Report
 
----
+📚 Resources
 
-## 📸 Sample Report
+Allure Playwright Docs
 
-<!-- Replace with actual screenshot if available -->
-![Sample Allure Report](./assets/sample-report.png)
+Playwright Documentation
 
----
+Allure Examples on GitHub
 
-## 📚 Resources
+👉 Pro Tip: You can also add scripts in package.json for convenience:
 
-- [Allure Playwright Docs](https://allurereport.org/docs/playwright/)
-- [Playwright Documentation](https://playwright.dev/docs/intro)
-- [Allure Examples on GitHub](https://github.com/allure-framework/allure-examples)
+"scripts": {
+  "test:allure": "playwright test",
+  "report:allure": "allure serve allure-results"
+}
+
+
+Then just run:
+
+npm run test:allure
+npm run report:allure

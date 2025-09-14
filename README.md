@@ -15,6 +15,7 @@ Playwright-Allure-Demo/
 ├── README.md               # Project documentation
 └── ...
 ```
+<img width="1265" height="863" alt="image" src="https://github.com/user-attachments/assets/0cb141dc-7b26-4e7f-9249-20e0b57c4d5a" />
 
 ---
 
@@ -150,7 +151,8 @@ Include system details in your config as shown above.
 ## 📸 Sample Report
 
 <!-- Replace with actual screenshot if available -->
-![Sample Allure Report](./assets/sample-report.png)
+<img width="1265" height="863" alt="image" src="https://github.com/user-attachments/assets/2f57fc5b-5481-494a-b468-91162b40f382" />
+
 
 ---
 

@@ -1,0 +1,40 @@
+# Node.js dependencies
+node_modules/
+
+# Playwright test output
+test-results/
+playwright-report/
+*.log
+
+# Allure results and reports
+allure-results/
+allure-report/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# Compiled TypeScript output (if using tsc)
+dist/
+build/
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log

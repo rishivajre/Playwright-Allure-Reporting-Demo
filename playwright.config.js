@@ -44,7 +44,13 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
-  projects: [
+  projects: [{
+    use: {
+      trace: 'on',
+      screenshot: 'on',
+      video: 'on',
+    },
+  },
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },

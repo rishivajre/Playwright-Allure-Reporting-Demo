@@ -15,6 +15,7 @@ Playwright-Allure-Demo/
 ├── README.md               # Project documentation
 └── ...
 ```
+<img width="1265" height="863" alt="image" src="https://github.com/user-attachments/assets/0cb141dc-7b26-4e7f-9249-20e0b57c4d5a" />
 
 ---
 

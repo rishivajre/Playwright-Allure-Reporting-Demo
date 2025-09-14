@@ -151,7 +151,8 @@ Include system details in your config as shown above.
 ## 📸 Sample Report
 
 <!-- Replace with actual screenshot if available -->
-<img width="1265" height="863" alt="image" src="https://github.com/user-attachments/assets/2f57fc5b-5481-494a-b468-91162b40f382" />
+<img width="1853" height="926" alt="image" src="https://github.com/user-attachments/assets/ac07e4cc-155d-4670-92b8-08c9f74635d5" />
+
 
 
 ---
